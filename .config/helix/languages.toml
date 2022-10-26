@@ -1,0 +1,6 @@
+[[language]]
+name = "rust"
+file-types = ["rs"]
+roots = ["Cargo.lock"]
+auto-format = true
+comment-token = "//"
