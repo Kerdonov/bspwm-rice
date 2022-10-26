@@ -1,0 +1,35 @@
+#!/bin/bash
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         4
+bspc config window_gap          12
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# colors
+bspc config normal_border_color "#22333b"
+bspc config active_border_color "#eae0d5"
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+bspc rule -a Emacs state=tiled
+
+setxkbmap ee &
+picom -fb &
+pkill dunst
+dunst &
+feh --bg-fill ~/Pictures/walls/mountains.png
+
+setxkbmap -option "caps:swapescape"
+
+sxhkd &
+SXHKD_SHELL="/bin/bash"
+
+xset r rate 200 50
+$HOME/.config/polybar/launch.sh &
